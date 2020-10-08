@@ -12,9 +12,11 @@ function App(props) {
     <div className="App">
       <header className="App-header">
        <h1>Rick and Morty Characters</h1>
+       <div className = "characters">
        {props.characters.map(character => (
-         <p>{character.name}</p>
+         <p className = "charinfo">{character.name}</p>
        ))}
+       </div>
       </header>
     </div>
   );
