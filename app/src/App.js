@@ -1,17 +1,28 @@
 import React, {useEffect, useState} from 'react';
-import {connect} from 'react-redux'
-import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react';
+import {fetchCharacters} from './actions/actions'
+import {connect} from 'react-redux'
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    props.fetchCharacters()
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-       <h1>Ron Swanson Quotes</h1>
+       <h1>Rick and Morty Characters</h1>
+       {props.characters.map(character => (
+         <p>{character.name}</p>
+       ))}
       </header>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return{
+    characters: state.characters
+}
+}
+export default connect(mapStateToProps, {fetchCharacters})(App);
