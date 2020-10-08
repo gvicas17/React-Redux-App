@@ -6,8 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
 import {applyMiddleware,createStore} from 'redux'
 import {logger} from 'redux-logger'
+import reducer from './reducer/reducer'
 
-const store = createStore(reducer, applyMiddleware(logger))
+const store = createStore(reducer, applyMiddleware(thunk))
 ReactDOM.render(
   <React.StrictMode>
     <Provider store = {store}>
