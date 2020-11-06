@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+h1{
+  font-size: 3rem;
+}
+
+button{ 
+  border: none;
+  padding: 1%;
+  border-radius: 10px;
+  background-color: darkgreen;
+  font-size: 1.3rem;
+}
+
+.images {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+img{
+  width: 200px;
+  height: 200px;
+  margin: 3%;
+  border-radius: 8px;
+}
